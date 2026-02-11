@@ -5,8 +5,25 @@ public class Car {
     private String warna;
     private String tipe;
 
-    public Car(String nama){
-        System.out.println("Ini mobil " + nama);
+    public Car(){
+
+    }
+
+    public Car(String tipe){
+        this("Merah", tipe);
+    }
+
+    public Car(String warna, String tipe){
+        this.warna = warna;
+        this.tipe = tipe;
+    }
+
+    public void printInfo() {
+        System.out.println(warna + " " + tipe);
+    }
+
+    public void Sound(){
+        System.out.println("Beep Beep Beep");
     }
 
     public void testPanggil(){
@@ -38,9 +55,24 @@ public class Car {
 
 }
 
+class Sedan extends Car{
+
+    public Sedan(){
+        super();
+    }
+
+    public Sedan(String tipe) {
+        super(tipe);
+    }
+
+    public Sedan(String warna, String tipe) {
+        super(warna, tipe);
+    }
+}
+
 class Main1{
     public static void main(String[] args) {
-        Car sedan = new Car("Jazz");
-//        sedan.testPanggil();
+        Sedan ss = new Sedan();
+        ss.Sound();
     }
 }
